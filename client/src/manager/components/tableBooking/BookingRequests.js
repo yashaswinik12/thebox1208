@@ -51,6 +51,10 @@ function BookingRequests({ setSection }) {
                         <th>Table No.</th>
                         <th>Action</th>
                       </tr>
+
+
+                      </thead>
+                      <tbody>
                       <tr>
                         <td>15-03-2024</td>
                         <td>14:31:49</td>
@@ -99,8 +103,7 @@ function BookingRequests({ setSection }) {
                           </button>
                         </td>
                       </tr>
-                    </thead>
-                    <tbody></tbody>
+                    </tbody>
                   </table>
                 </div>
               </div>

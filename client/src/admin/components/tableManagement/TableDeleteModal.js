@@ -6,7 +6,7 @@ function TableDeleteModal({ show, handleClose, data, fetchTableData }) {
   const deleteTable = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/api/deletetable/${data.id}`,
+        `https://5j4ncx-3001.csb.app/api/deletetable/${data.id}`,
         {
           withCredentials: true,
         }
@@ -18,7 +18,7 @@ function TableDeleteModal({ show, handleClose, data, fetchTableData }) {
       console.log("Error deleting table:", error);
     }
   };
-  
+
   return (
     <Modal show={show} onHide={handleClose} backdrop="static">
       <Modal.Header closeButton>

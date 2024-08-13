@@ -14,7 +14,7 @@ function AddTable({ setSection }) {
     onSubmit: (values) => {
       console.log(values);
       axios
-        .post("http://localhost:3001/api/addtable", values, {
+        .post("https://5j4ncx-3001.csb.app/api/addtable", values, {
           withCredentials: true,
         })
         .then((res) => {
@@ -81,70 +81,74 @@ function AddTable({ setSection }) {
                   </div>
                 </div>
                 <div className="card-body">
-                    <div className="col-md-4">
-                      <div className="form-group">
-                        <label htmlFor="dtype">Dining Type</label>
-                        <select
-                          name="area"
-                          className="form-select custom-select"
-                          value={formik.values.area}
+                  <div className="col-md-4">
+                    <div className="form-group">
+                      <label htmlFor="dtype">Dining Type</label>
+                      <select
+                        name="area"
+                        className="form-select custom-select"
+                        value={formik.values.area}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                      >
+                        <option disabled value={""}>
+                          Select Option
+                        </option>
+                        <option value="A.C.">A.C.</option>
+                        <option value="Non A.C.">Non A.C.</option>
+                      </select>
+                      <label className="text-danger">
+                        {formik.errors.area && formik.touched.area
+                          ? formik.errors.area
+                          : null}
+                      </label>
+                    </div>
+                  </div>
+                  {formik.values.tables.map((table, index) => (
+                    <div className="row" key={index}>
+                      <div className="form-group col-md-4">
+                        <label htmlFor="table_no">Table No</label>
+                        <input
+                          type="text"
+                          name={`tables.${index}.table_no`}
+                          className="form-control"
+                          value={table.table_no}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
-                        >
-                          <option disabled value={""}>
-                            Select Option
-                          </option>
-                          <option value="A.C.">A.C.</option>
-                          <option value="Non A.C.">Non A.C.</option>
-                        </select>
+                        />
                         <label className="text-danger">
-                          {formik.errors.area && formik.touched.area
-                            ? formik.errors.area
+                          {formik.errors.tables?.[index]?.table_no &&
+                          formik.touched.tables?.[index]?.table_no
+                            ? formik.errors.tables[index].table_no
+                            : null}
+                        </label>
+                      </div>
+                      <div className="form-group col-md-4">
+                        <label htmlFor="max_person">Max Person</label>
+                        <input
+                          type="number"
+                          name={`tables.${index}.max_person`}
+                          className="form-control"
+                          value={table.max_person}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                        />
+                        <label className="text-danger">
+                          {formik.errors.tables?.[index]?.max_person &&
+                          formik.touched.tables?.[index]?.max_person
+                            ? formik.errors.tables[index].max_person
                             : null}
                         </label>
                       </div>
                     </div>
-                    {formik.values.tables.map((table, index) => (
-                      <div className="row" key={index}>
-                        <div className="form-group col-md-4">
-                          <label htmlFor="table_no">Table No</label>
-                          <input
-                            type="text"
-                            name={`tables.${index}.table_no`}
-                            className="form-control"
-                            value={table.table_no}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                          />
-                          <label className="text-danger">
-                          {formik.errors.tables?.[index]?.table_no &&
-                            formik.touched.tables?.[index]?.table_no
-                              ? formik.errors.tables[index].table_no
-                              : null}
-                          </label>
-                        </div>
-                        <div className="form-group col-md-4">
-                          <label htmlFor="max_person">Max Person</label>
-                          <input
-                            type="number"
-                            name={`tables.${index}.max_person`}
-                            className="form-control"
-                            value={table.max_person}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                          />
-                          <label className="text-danger">
-                          {formik.errors.tables?.[index]?.max_person &&
-                            formik.touched.tables?.[index]?.max_person
-                              ? formik.errors.tables[index].max_person
-                              : null}
-                          </label>
-                        </div>
-                      </div>
-                    ))}
+                  ))}
                   <div id="newElementId" className="form-group" />
 
-                  <button type="button" className="btn btn-dark mx-2" onClick={addMoreTable}>
+                  <button
+                    type="button"
+                    className="btn btn-dark mx-2"
+                    onClick={addMoreTable}
+                  >
                     <img src="../../dist/img/icon/add.svg" className="mx-1" />
                     Add More Tables
                   </button>

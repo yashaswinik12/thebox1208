@@ -11,7 +11,7 @@ function ViewMenu({ setSection }) {
   const fetchMenuData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/getmenudata",
+        "https://5j4ncx-3001.csb.app/api/getmenudata",
         {
           withCredentials: true,
         }
@@ -46,9 +46,15 @@ function ViewMenu({ setSection }) {
                 <h4 className="card-header"> {data.category} </h4>
                 <div className="card-body">
                   <div className="row">
-                    <div className="col-md-6"><b> Dish Name </b></div>
-                    <div className="col-md-2"><b> Price </b></div>
-                    <div className="col-md-4"><b> Action </b></div>
+                    <div className="col-md-6">
+                      <b> Dish Name </b>
+                    </div>
+                    <div className="col-md-2">
+                      <b> Price </b>
+                    </div>
+                    <div className="col-md-4">
+                      <b> Action </b>
+                    </div>
                   </div>
                   <hr />
                   {data.dishes.map((dish) => (
@@ -74,8 +80,6 @@ function ViewMenu({ setSection }) {
               </div>
             </div>
           ))}
-
-          
         </div>
       </section>
 

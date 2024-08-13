@@ -16,7 +16,7 @@ function ViewOrderHistory() {
   const fetchOrderData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/getorderhistory",
+        "https://5j4ncx-3001.csb.app/api/getorderhistory",
         {
           withCredentials: true,
         }

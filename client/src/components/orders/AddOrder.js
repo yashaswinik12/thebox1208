@@ -5,9 +5,12 @@ function AddOrder({ setSection }) {
   const [tableData, setTableData] = useState([]);
   const fetchTableData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/gettabledata", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://5j4ncx-3001.csb.app/api/gettabledata",
+        {
+          withCredentials: true,
+        }
+      );
       setTableData(response.data);
     } catch (error) {
       console.log("Error fetching table data:", error);

@@ -6,43 +6,54 @@ import { signupSchema1 } from "../../schemas";
 function Firstform({ inputData, setInputData, handleGoNext }) {
   const [emailError, setEmailError] = useState("");
 
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } =
-    useFormik({
-      initialValues: inputData,
-      validationSchema: signupSchema1,
-      onSubmit: async (values) => {
-        try {
-          const formData = new FormData();
-          formData.append('logo', values.logo);
-          const uploadResponse = await axios.post("http://localhost:3001/api/uploadlogo", formData, {
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    setFieldValue,
+  } = useFormik({
+    initialValues: inputData,
+    validationSchema: signupSchema1,
+    onSubmit: async (values) => {
+      try {
+        const formData = new FormData();
+        formData.append("logo", values.logo);
+        const uploadResponse = await axios.post(
+          "https://5j4ncx-3001.csb.app/api/uploadlogo",
+          formData,
+          {
             headers: {
-              'Content-Type': 'multipart/form-data',
+              "Content-Type": "multipart/form-data",
             },
-          });
-
-          if (uploadResponse.data.message === "File uploaded successfully") {
-            const logoPath = uploadResponse.data.filePath;
-            const response = await axios.post(
-              "http://localhost:3001/api/emailcheck",
-              { email: values.email }
-            );
-
-            if (response.data.message === "User Already Exists") {
-              setEmailError("Email is already registered.");
-            } else {
-              setEmailError("");
-              setInputData({ ...inputData, ...values, logo: logoPath });
-              handleGoNext();
-            }
           }
-        } catch (error) {
-          console.log(error);
+        );
+
+        if (uploadResponse.data.message === "File uploaded successfully") {
+          const logoPath = uploadResponse.data.filePath;
+          const response = await axios.post(
+            "https://5j4ncx-3001.csb.app/api/emailcheck",
+            { email: values.email }
+          );
+
+          if (response.data.message === "User Already Exists") {
+            setEmailError("Email is already registered.");
+          } else {
+            setEmailError("");
+            setInputData({ ...inputData, ...values, logo: logoPath });
+            handleGoNext();
+          }
         }
-      },
-    });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 
   const handleFileChange = (event) => {
-    setFieldValue('logo', event.target.files[0]);
+    setFieldValue("logo", event.target.files[0]);
   };
 
   return (
@@ -93,9 +104,7 @@ function Firstform({ inputData, setInputData, handleGoNext }) {
             <label className="text-danger">
               {errors.email && touched.email ? errors.email : null}
             </label>
-            <label className="text-danger">
-              {emailError}
-            </label>
+            <label className="text-danger">{emailError}</label>
           </div>
           <div className="from-group mb-3">
             <label htmlFor="phone">Contact No.</label>

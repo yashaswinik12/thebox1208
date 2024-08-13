@@ -19,9 +19,13 @@ function EditDishModal({ show, handleClose, data, fetchMenuData }) {
       onSubmit: (values) => {
         console.log(values);
         axios
-          .put(`http://localhost:3001/api/updatemenu/${data._id}`, values, {
-            withCredentials: true,
-          })
+          .put(
+            `https://5j4ncx-3001.csb.app/api/updatemenu/${data._id}`,
+            values,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
             console.log(res.data);
             handleClose();
@@ -63,7 +67,9 @@ function EditDishModal({ show, handleClose, data, fetchMenuData }) {
               required
             />
             <label className="text-danger">
-              {errors.dish_price && touched.dish_price ? errors.dish_price : null}
+              {errors.dish_price && touched.dish_price
+                ? errors.dish_price
+                : null}
             </label>
           </Form.Group>
           <Form.Group className="mb-3">

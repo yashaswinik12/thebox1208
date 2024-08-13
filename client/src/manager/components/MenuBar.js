@@ -8,9 +8,12 @@ export default function MenuBar() {
   const navigate = useNavigate();
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/userdata", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://5j4ncx-3001.csb.app/api/userdata",
+        {
+          withCredentials: true,
+        }
+      );
       if (response.data === "Null") {
         navigate("/login");
       } else {
@@ -49,7 +52,7 @@ export default function MenuBar() {
               >
                 <div className="image mt-2 mb-2">
                   <img
-                    src={`http://localhost:3001${userData.logo}`}
+                    src={`https://5j4ncx-3001.csb.app${userData.logo}`}
                     className="img-circle elevation-3"
                     alt="User Image"
                   />

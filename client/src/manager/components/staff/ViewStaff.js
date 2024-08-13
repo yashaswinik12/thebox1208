@@ -14,7 +14,7 @@ function ViewStaff({ setSection }) {
     async function fetchStaff() {
       try {
         const response = await axios.get(
-          "http://localhost:3001/api/staffdata",
+          "https://5j4ncx-3001.csb.app/api/staffdata",
           {
             withCredentials: true,
           }
@@ -52,7 +52,8 @@ function ViewStaff({ setSection }) {
                   <div className="card-tools mx-2">
                     <Link to={"/staff/attendance"}>
                       <button type="button" className="btn btn-block btn-dark">
-                        <img src="../dist/img/icon/add.svg" alt="Attendance" /> Attendance
+                        <img src="../dist/img/icon/add.svg" alt="Attendance" />{" "}
+                        Attendance
                       </button>
                     </Link>
                   </div>
@@ -65,8 +66,13 @@ function ViewStaff({ setSection }) {
                         className="col-md-2"
                         onClick={() => setShowProfileModal(true)}
                       >
-                        <img src={`http://localhost:3001/uploads/staff/profile/${staffMember.photo}`} alt="User Image" />
-                        <p className="users-list-name link">{staffMember.f_name}</p>
+                        <img
+                          src={`https://5j4ncx-3001.csb.appuploads/staff/profile/${staffMember.photo}`}
+                          alt="User Image"
+                        />
+                        <p className="users-list-name link">
+                          {staffMember.f_name}
+                        </p>
                       </li>
                     ))}
                   </ul>
@@ -77,9 +83,16 @@ function ViewStaff({ setSection }) {
         </div>
       </section>
 
-      <StaffProfileModal show={showProfileModal} handleClose={() => setShowProfileModal(false)} handleDelete={() => setShowDeleteModal(true)} />
+      <StaffProfileModal
+        show={showProfileModal}
+        handleClose={() => setShowProfileModal(false)}
+        handleDelete={() => setShowDeleteModal(true)}
+      />
 
-      <StaffDeleteModal show={showDeleteModal} handleClose={() => setShowDeleteModal(false)} />
+      <StaffDeleteModal
+        show={showDeleteModal}
+        handleClose={() => setShowDeleteModal(false)}
+      />
     </>
   );
 }

@@ -10,7 +10,7 @@ function ViewTables({ setSection }) {
   const fetchTableData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/gettabledata",
+        "https://5j4ncx-3001.csb.app/api/gettabledata",
         {
           withCredentials: true,
         }

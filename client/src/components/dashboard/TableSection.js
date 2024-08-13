@@ -7,7 +7,7 @@ function TableSection({ setMainSection, setTableId, setOrderId }) {
   const fetchTableData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/gettabledata",
+        "https://5j4ncx-3001.csb.app/api/gettabledata",
         {
           withCredentials: true,
         }
@@ -25,7 +25,7 @@ function TableSection({ setMainSection, setTableId, setOrderId }) {
   const onClickTable = async (tableId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/gettabledata/${tableId}`,
+        `https://5j4ncx-3001.csb.app/api/gettabledata/${tableId}`,
         {
           withCredentials: true,
         }

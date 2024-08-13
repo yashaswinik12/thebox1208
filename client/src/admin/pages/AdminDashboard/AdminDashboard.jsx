@@ -17,9 +17,12 @@ export default function AdminDashboard() {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/userdata", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://5j4ncx-3001.csb.app/api/userdata",
+        {
+          withCredentials: true,
+        }
+      );
       if (response.data === "Null") {
         navigate("/login");
       } else {
@@ -40,11 +43,8 @@ export default function AdminDashboard() {
 
       <MenuBar />
       <div className="content-wrapper p-2">
-        <TableSection
-          setOrderId={setOrderId}
-        />
+        <TableSection setOrderId={setOrderId} />
 
-        
         <section className="content">
           <div className="container-fluid">
             <div className="row">
