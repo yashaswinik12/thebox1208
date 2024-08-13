@@ -27,7 +27,7 @@ function AddInventory({ setSection }) {
       onSubmit: (values) => {
         console.log(values);
         axios
-          .post("http://localhost:3001/api/addinventory", values, {
+          .post("https://5j4ncx-3001.csb.app/api/addinventory", values, {
             withCredentials: true,
           })
           .then((res) => {

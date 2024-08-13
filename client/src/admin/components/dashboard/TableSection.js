@@ -3,14 +3,13 @@ import axios from "axios";
 
 import { MdLocalPrintshop } from "react-icons/md";
 
-
 function TableSection({ setMainSection, setTableId, setOrderId }) {
   const [tableData, setTableData] = useState([]);
 
   const fetchTableData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/gettabledata",
+        "https://5j4ncx-3001.csb.app/api/gettabledata",
         {
           withCredentials: true,
         }
@@ -41,9 +40,7 @@ function TableSection({ setMainSection, setTableId, setOrderId }) {
                   </div>
                   <ul className="row" style={{ listStyle: "none" }}>
                     {table.tables.map((table) => (
-                      <li
-                        key={table._id}
-                      >
+                      <li key={table._id}>
                         <div className="container">
                           <div
                             className={`dashboard-table d-flex justify-content-center align-items-center ${
@@ -56,7 +53,6 @@ function TableSection({ setMainSection, setTableId, setOrderId }) {
                             }`}
                           >
                             <div align="center">{table.table_no}</div>
-
                           </div>
                         </div>
                       </li>

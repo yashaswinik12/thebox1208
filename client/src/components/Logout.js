@@ -6,7 +6,9 @@ function Logout() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/logout", { withCredentials: true })
+      .get("https://5j4ncx-3001.csb.app/api/logout", {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log("Logged Out");
         navigate("/login");

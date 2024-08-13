@@ -14,7 +14,7 @@ function AddTable({ setSection }) {
     onSubmit: (values) => {
       console.log(values);
       axios
-        .post("http://localhost:3001/api/addtable", values, {
+        .post("https://5j4ncx-3001.csb.app/api/addtable", values, {
           withCredentials: true,
         })
         .then((res) => {

@@ -7,7 +7,7 @@ function OrderMenuShow({ addItemToOrder }) {
   const fetchMenuData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/getmenudata",
+        "https://5j4ncx-3001.csb.appi/getmenudata",
         {
           withCredentials: true,
         }

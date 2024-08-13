@@ -13,7 +13,7 @@ function CustomerOrderDetail({
   setTableId,
   setOrderId,
   setMainSection,
-  orderType
+  orderType,
 }) {
   const [tableInfo, setTableInfo] = useState({});
   const [paymentSection, setPaymentSection] = useState(false);
@@ -21,7 +21,7 @@ function CustomerOrderDetail({
   const fetchTableInfo = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/gettabledata/${tableId}`,
+        `https://5j4ncx-3001.csb.app/api/gettabledata/${tableId}`,
         { withCredentials: true }
       );
       setTableInfo(response.data);
@@ -80,7 +80,7 @@ function CustomerOrderDetail({
     if (firstOrder.customer_id) {
       axios
         .get(
-          `http://localhost:3001/api/getcustomerdata/${firstOrder.customer_id}`,
+          `https://5j4ncx-3001.csb.app/api/getcustomerdata/${firstOrder.customer_id}`,
           { withCredentials: true }
         )
         .then((response) => {
@@ -135,7 +135,7 @@ function CustomerOrderDetail({
     try {
       await axios
         .post(
-          "http://localhost:3001/api/ordercontroller",
+          "https://5j4ncx-3001.csb.appordercontroller",
           { table_id, orderInfo: updatedOrderInfo, customerInfo },
           { withCredentials: true }
         )
@@ -154,8 +154,6 @@ function CustomerOrderDetail({
 
   return (
     <div className="col-md-6">
-      
-
       {displayMainSection()}
 
       <div
@@ -245,7 +243,12 @@ function CustomerOrderDetail({
                 )}
             </label>
             {paymentSection === true ? (
-              <button className="btn mx-2" onClick={() => orderController("Paid")}>Paid</button>
+              <button
+                className="btn mx-2"
+                onClick={() => orderController("Paid")}
+              >
+                Paid
+              </button>
             ) : (
               <></>
             )}

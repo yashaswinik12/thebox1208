@@ -35,7 +35,7 @@ function AddStaff({ setSection }) {
       }
 
       axios
-        .post("http://localhost:3001/api/uploadstaff", formData, {
+        .post("https://5j4ncx-3001.csb.app/api/uploadstaff", formData, {
           withCredentials: true,
           headers: {
             "Content-Type": "multipart/form-data",
@@ -46,7 +46,7 @@ function AddStaff({ setSection }) {
           const updatedValues = { ...values, ...uploadedData };
 
           axios
-            .post("http://localhost:3001/api/addstaff", updatedValues, {
+            .post("https://5j4ncx-3001.csb.appaddstaff", updatedValues, {
               withCredentials: true,
             })
             .then((res) => {
