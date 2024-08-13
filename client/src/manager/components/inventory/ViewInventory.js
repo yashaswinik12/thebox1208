@@ -70,26 +70,26 @@ function ViewInventory({ setSection }) {
                         <tr>
                           <td>15/03/2024</td>
                           <td>12345</td>
-                          <td>Dmart</td>
+                          <td>Dmart1</td>
                           <td>Grocery</td>
                           <td>5000</td>
                           <td>0</td>
                           <td>
                             <button
                               type="button"
-                              className="btn btn-block btn-dark"
+                              className="btn btn-transparent bg-transparent"
                               onClick={viewDetails}
                             >
-                              View
+                              <img src="../../dist/img/icon/eye-b.svg" />
                             </button>
                             <button
                               type="button"
-                              className="btn btn-block btn-dark"
+                              className="btn btn-transparent bg-transparent"
                               data-bs-toggle="modal"
                               data-bs-target="#deleteBillModal"
                               onClick={() => setShowDeleteModal(true)}
                             >
-                              Delete
+                              <img src="../../dist/img/icon/delete-b.svg" />
                             </button>
                           </td>
                         </tr>

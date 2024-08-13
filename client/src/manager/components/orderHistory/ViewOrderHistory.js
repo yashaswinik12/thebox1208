@@ -113,34 +113,36 @@ function ViewOrderHistory() {
   };
   return (
     <div className="container-fluid">
-      <div className="mb-3 d-flex justify-content-around">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          className="form-control w-25 mx-3"
-        />
-        <div className="d-flex align-items-center w-25">
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            selectsStart
-            startDate={startDate}
-            endDate={endDate}
-            placeholderText="Start Date"
-            className="form-control"
+      <div className="card">
+        <div className="m-3 d-flex justify-content-between">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="form-control w-25 mx-3"
           />
-          <DatePicker
-            selected={endDate}
-            onChange={(date) => setEndDate(date)}
-            selectsEnd
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate}
-            placeholderText="End Date"
-            className="form-control"
-          />
+          <div className="d-flex align-items-center w-25">
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              selectsStart
+              startDate={startDate}
+              endDate={endDate}
+              placeholderText="Start Date"
+              className="form-control"
+            />
+            <DatePicker
+              selected={endDate}
+              onChange={(date) => setEndDate(date)}
+              selectsEnd
+              startDate={startDate}
+              endDate={endDate}
+              minDate={startDate}
+              placeholderText="End Date"
+              className="form-control mx-3"
+            />
+          </div>
         </div>
       </div>
       <DataTable
@@ -149,7 +151,7 @@ function ViewOrderHistory() {
         pagination
         highlightOnHover
         customStyles={tableStyle}
-        onRowClicked={handleRowClick} 
+        onRowClicked={handleRowClick}
         responsive
       />
     </div>
