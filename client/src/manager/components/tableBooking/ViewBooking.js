@@ -60,6 +60,8 @@ function ViewBooking({ setSection }) {
                         <th>Table No.</th>
                         <th>Action</th>
                       </tr>
+                    </thead>
+                    <tbody>
                       <tr>
                         <td>10-03-2024</td>
                         <td>14:31:49</td>
@@ -201,8 +203,7 @@ function ViewBooking({ setSection }) {
                           </button>
                         </td>
                       </tr>
-                    </thead>
-                    <tbody></tbody>
+                    </tbody>
                   </table>
                   {/* data table end for today's table booking */}
                 </div>
@@ -230,102 +231,103 @@ function ViewBooking({ setSection }) {
                         <th>Table No.</th>
                         <th>Action</th>
                       </tr>
-                      <tr>
-                        <td>15-03-2024</td>
-                        <td>14:31:49</td>
-                        <td>Pranay</td>
-                        <td>2.</td>
-                        <td>
-                          <button
-                            className="btn bg-transparent reserve_btn"
-                            style={{ float: "left" }}
-                            onClick={() => setShowReserveModal(true)}
-                            title="Reserve"
-                          >
-                            <img src="../dist/img/reserved-b.svg" />
-                          </button>
-                          <form
-                            action="booking-details.html"
-                            style={{ float: "left" }}
-                            method="POST"
-                          >
-                            <button
-                              className="btn bg-transparent"
-                              type="submit"
-                              name="submit_booking_id"
-                              title="View"
-                              onClick={getBookingDetails}
-                            >
-                              <img src="../dist/img/eye-b.svg" />
-                            </button>
-                          </form>
-                          <button
-                            className="btn bg-transparent complete_btn"
-                            style={{ float: "left" }}
-                            title="Completed"
-                            onClick={() => setShowCompleteModal(true)}
-                          >
-                            <img src="../dist/img/Completed-b.svg" />
-                          </button>
-                          <button
-                            type="button"
-                            className="btn bg-transparent delete_btn"
-                            onClick={() => setShowDeleteModal(true)}
-                            title="Delete"
-                          >
-                            <img src="../dist/img/delete-b.svg" />
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>15-03-2024</td>
-                        <td>14:31:49</td>
-                        <td>Pranay</td>
-                        <td>2.</td>
-                        <td>
-                          <button
-                            className="btn bg-transparent reserve_btn"
-                            style={{ float: "left" }}
-                            onClick={() => setShowReserveModal(true)}
-                            title="Reserve"
-                          >
-                            <img src="../dist/img/reserved-b.svg" />
-                          </button>
-                          <form
-                            action="booking-details.html"
-                            style={{ float: "left" }}
-                            method="POST"
-                          >
-                            <button
-                              className="btn bg-transparent"
-                              type="submit"
-                              name="submit_booking_id"
-                              title="View"
-                              onClick={getBookingDetails}
-                            >
-                              <img src="../dist/img/eye-b.svg" />
-                            </button>
-                          </form>
-                          <button
-                            className="btn bg-transparent complete_btn"
-                            style={{ float: "left" }}
-                            title="Completed"
-                            onClick={() => setShowCompleteModal(true)}
-                          >
-                            <img src="../dist/img/Completed-b.svg" />
-                          </button>
-                          <button
-                            type="button"
-                            className="btn bg-transparent delete_btn"
-                            onClick={() => setShowDeleteModal(true)}
-                            title="Delete"
-                          >
-                            <img src="../dist/img/delete-b.svg" />
-                          </button>
-                        </td>
-                      </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                      <tr>
+                        <td>15-03-2024</td>
+                        <td>14:31:49</td>
+                        <td>Pranay</td>
+                        <td>2.</td>
+                        <td>
+                          <button
+                            className="btn bg-transparent reserve_btn"
+                            style={{ float: "left" }}
+                            onClick={() => setShowReserveModal(true)}
+                            title="Reserve"
+                          >
+                            <img src="../dist/img/reserved-b.svg" />
+                          </button>
+                          <form
+                            action="booking-details.html"
+                            style={{ float: "left" }}
+                            method="POST"
+                          >
+                            <button
+                              className="btn bg-transparent"
+                              type="submit"
+                              name="submit_booking_id"
+                              title="View"
+                              onClick={getBookingDetails}
+                            >
+                              <img src="../dist/img/eye-b.svg" />
+                            </button>
+                          </form>
+                          <button
+                            className="btn bg-transparent complete_btn"
+                            style={{ float: "left" }}
+                            title="Completed"
+                            onClick={() => setShowCompleteModal(true)}
+                          >
+                            <img src="../dist/img/Completed-b.svg" />
+                          </button>
+                          <button
+                            type="button"
+                            className="btn bg-transparent delete_btn"
+                            onClick={() => setShowDeleteModal(true)}
+                            title="Delete"
+                          >
+                            <img src="../dist/img/delete-b.svg" />
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>15-03-2024</td>
+                        <td>14:31:49</td>
+                        <td>Pranay</td>
+                        <td>2.</td>
+                        <td>
+                          <button
+                            className="btn bg-transparent reserve_btn"
+                            style={{ float: "left" }}
+                            onClick={() => setShowReserveModal(true)}
+                            title="Reserve"
+                          >
+                            <img src="../dist/img/reserved-b.svg" />
+                          </button>
+                          <form
+                            action="booking-details.html"
+                            style={{ float: "left" }}
+                            method="POST"
+                          >
+                            <button
+                              className="btn bg-transparent"
+                              type="submit"
+                              name="submit_booking_id"
+                              title="View"
+                              onClick={getBookingDetails}
+                            >
+                              <img src="../dist/img/eye-b.svg" />
+                            </button>
+                          </form>
+                          <button
+                            className="btn bg-transparent complete_btn"
+                            style={{ float: "left" }}
+                            title="Completed"
+                            onClick={() => setShowCompleteModal(true)}
+                          >
+                            <img src="../dist/img/Completed-b.svg" />
+                          </button>
+                          <button
+                            type="button"
+                            className="btn bg-transparent delete_btn"
+                            onClick={() => setShowDeleteModal(true)}
+                            title="Delete"
+                          >
+                            <img src="../dist/img/delete-b.svg" />
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
               </div>

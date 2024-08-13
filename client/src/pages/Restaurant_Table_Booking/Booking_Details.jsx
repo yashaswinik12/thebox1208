@@ -12,7 +12,7 @@ export default function BookingDetails() {
   const navigate = useNavigate();
   const editDetails = () => {
     navigate("/table-booking/update");
-  }
+  };
   return (
     <div className="wrapper">
       <Navbar />

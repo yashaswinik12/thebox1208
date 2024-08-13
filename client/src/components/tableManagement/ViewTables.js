@@ -9,9 +9,12 @@ function ViewTables({ setSection }) {
   const [tableData, setTableData] = useState([]);
   const fetchTableData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/gettabledata", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "http://localhost:3001/api/gettabledata",
+        {
+          withCredentials: true,
+        }
+      );
       setTableData(response.data);
     } catch (error) {
       console.log("Error fetching table data:", error);
@@ -62,6 +65,8 @@ function ViewTables({ setSection }) {
                       <th>Max Person</th>
                       <th>Action</th>
                     </tr>
+                  </thead>
+                  <tbody>
                     {tableData.map((data) => (
                       <tr key={data._id}>
                         <td>{data.table_no}</td>
@@ -79,8 +84,7 @@ function ViewTables({ setSection }) {
                         </td>
                       </tr>
                     ))}
-                  </thead>
-                  <tbody></tbody>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -88,9 +92,15 @@ function ViewTables({ setSection }) {
         </div>
       </section>
 
-      <TableAddedModal show={showTableAddedModal} handleClose={() => setShowTableAddedModal(false)} />
+      <TableAddedModal
+        show={showTableAddedModal}
+        handleClose={() => setShowTableAddedModal(false)}
+      />
 
-      <TableDeleteModal show={showTableDeleteModal} handleClose={() => setShowTableDeleteModal(false)} />
+      <TableDeleteModal
+        show={showTableDeleteModal}
+        handleClose={() => setShowTableDeleteModal(false)}
+      />
     </>
   );
 }
