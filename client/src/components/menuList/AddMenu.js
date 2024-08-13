@@ -33,7 +33,7 @@ function AddMenu({ setSection }) {
     onSubmit: (values) => {
       console.log("Submitted", values);
       axios
-        .post("http://localhost:3001/api/addmenu", values, {
+        .post("https://5j4ncx-3001.csb.app/api/addmenu", values, {
           withCredentials: true,
         })
         .then((res) => {
@@ -267,7 +267,8 @@ function AddMenu({ setSection }) {
                           />
                         </div>
                         <div className="form-group col-md-8 mb-0">
-                          <label className="mb-0"
+                          <label
+                            className="mb-0"
                             htmlFor={`dishes.${index}.showAdvancedOptions`}
                           >
                             <input
@@ -280,7 +281,7 @@ function AddMenu({ setSection }) {
                           {showAdvancedOptions[index] && (
                             <div className="row ">
                               <div className="form-group col-md-6">
-                                <label  htmlFor={`dishes.${index}.quantity`}>
+                                <label htmlFor={`dishes.${index}.quantity`}>
                                   Quantity
                                 </label>
                                 <input

@@ -57,7 +57,7 @@ export default function Register(props) {
   const handleSubmit = () => {
     console.log(inputData);
     axios
-      .post("http://localhost:3001/api/register", inputData, {
+      .post("https://5j4ncx-3001.csb.app/api/register", inputData, {
         withCredentials: true,
       })
       .then((res) => {

@@ -39,7 +39,7 @@ function OrderSection({
   const fetchOrderDetails = async (orderId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/getorderdata/${orderId}`,
+        `https://5j4ncx-3001.csb.app/api/getorderdata/${orderId}`,
         {
           withCredentials: true,
         }
@@ -102,7 +102,7 @@ function OrderSection({
                     className="btn btn-block btn-dark"
                     onClick={() => setMainSection("DashboardSection")}
                   >
-                   Table Section
+                    Table Section
                   </button>
                 </div>
               </div>

@@ -6,9 +6,12 @@ function ViewKOTs() {
 
   const fetchOrderData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/showkots", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://5j4ncx-3001.csb.app/api/showkots",
+        {
+          withCredentials: true,
+        }
+      );
       setKotData(response.data);
     } catch (error) {
       console.log("Error fetching order data:", error);

@@ -19,14 +19,21 @@ function AddMenu({ setSection }) {
       category: "",
       meal_type: "veg",
       dishes: [
-        { dish_name: "", dish_img: "", dish_price: "", description: "", quantity: "", unit: "" },
+        {
+          dish_name: "",
+          dish_img: "",
+          dish_price: "",
+          description: "",
+          quantity: "",
+          unit: "",
+        },
       ],
     },
     validationSchema: addMenu,
     onSubmit: (values) => {
       console.log("Submitted", values);
       axios
-        .post("http://localhost:3001/api/addmenu", values, {
+        .post("https://5j4ncx-3001.csb.app/api/addmenu", values, {
           withCredentials: true,
         })
         .then((res) => {
@@ -48,7 +55,14 @@ function AddMenu({ setSection }) {
   const addDish = () => {
     formik.setFieldValue("dishes", [
       ...formik.values.dishes,
-      { dish_name: "", dish_img: "", dish_price: "", description: "", quantity: "", unit: "" },
+      {
+        dish_name: "",
+        dish_img: "",
+        dish_price: "",
+        description: "",
+        quantity: "",
+        unit: "",
+      },
     ]);
     setShowAdvancedOptions([...showAdvancedOptions, false]);
   };
@@ -251,10 +265,11 @@ function AddMenu({ setSection }) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                           />
-                          
                         </div>
                         <div className="form-group col-md-8 mb-0">
-                          <label htmlFor={`dishes.${index}.showAdvancedOptions`}>
+                          <label
+                            htmlFor={`dishes.${index}.showAdvancedOptions`}
+                          >
                             <input
                               type="checkbox"
                               onChange={() => handleCheckboxChange(index)}

@@ -27,7 +27,7 @@ function AddStaff({ setSection }) {
     onSubmit: (values) => {
       console.log(values);
       axios
-        .post("http://localhost:3001/api/addstaff", values, {
+        .post("https://5j4ncx-3001.csb.appi/addstaff", values, {
           withCredentials: true,
         })
         .then((res) => {
@@ -285,9 +285,7 @@ function AddStaff({ setSection }) {
                       value={formik.values.document_type}
                       onChange={formik.handleChange}
                     >
-                      <option value={""}>
-                        Select one
-                      </option>
+                      <option value={""}>Select one</option>
                       <option value="National Identity Card">
                         National Identity Card
                       </option>

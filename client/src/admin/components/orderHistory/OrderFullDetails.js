@@ -11,7 +11,7 @@ function OrderFullDetails() {
   const fetchOrderDetails = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/getorderdata/${id}`,
+        `https://5j4ncx-3001.csb.app/api/getorderdata/${id}`,
         {
           withCredentials: true,
         }
@@ -116,7 +116,8 @@ function OrderFullDetails() {
         <div className="row m-2">
           <div className="col-md-8">
             <p>
-              <strong>Amount in words:</strong> {numWords(order[0].total_amount)}
+              <strong>Amount in words:</strong>{" "}
+              {numWords(order[0].total_amount)}
             </p>
           </div>
           <div className="col-md-4">

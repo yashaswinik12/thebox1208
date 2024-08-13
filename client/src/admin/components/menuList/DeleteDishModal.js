@@ -5,7 +5,7 @@ import { Modal, Button } from "react-bootstrap";
 function DeleteDishModal({ show, handleClose, data, fetchMenuData }) {
   const deleteDish = (id) => {
     axios
-      .delete(`http://localhost:3001/api/deltemenu/${id}`)
+      .delete(`https://5j4ncx-3001.csb.app/api/deltemenu/${id}`)
       .then((res) => {
         console.log(res.data);
         handleClose();

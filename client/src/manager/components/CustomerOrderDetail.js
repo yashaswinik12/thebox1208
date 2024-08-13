@@ -270,12 +270,7 @@ function CustomerOrderDetail({
                 )}
             </label>
             {paymentSection === true ? (
-              <button
-                className="btn mx-2"
-                onClick={() => orderController("Paid")}
-              >
-                Paid
-              </button>
+              <button className="btn mx-2" onClick={() => orderController("Paid")}>Paid</button>
             ) : (
               <></>
             )}
