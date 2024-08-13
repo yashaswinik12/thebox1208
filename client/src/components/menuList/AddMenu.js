@@ -19,7 +19,14 @@ function AddMenu({ setSection }) {
       category: "",
       meal_type: "veg",
       dishes: [
-        { dish_name: "", dish_img: "", dish_price: "", description: "", quantity: "", unit: "" },
+        {
+          dish_name: "",
+          dish_img: "",
+          dish_price: "",
+          description: "",
+          quantity: "",
+          unit: "",
+        },
       ],
     },
     validationSchema: addMenu,
@@ -48,7 +55,14 @@ function AddMenu({ setSection }) {
   const addDish = () => {
     formik.setFieldValue("dishes", [
       ...formik.values.dishes,
-      { dish_name: "", dish_img: "", dish_price: "", description: "", quantity: "", unit: "" },
+      {
+        dish_name: "",
+        dish_img: "",
+        dish_price: "",
+        description: "",
+        quantity: "",
+        unit: "",
+      },
     ]);
     setShowAdvancedOptions([...showAdvancedOptions, false]);
   };
@@ -171,7 +185,7 @@ function AddMenu({ setSection }) {
                     </div>
                   </div>
                   {formik.values.dishes.map((dish, index) => (
-                    <div key={index} className="px-3 ">
+                    <div key={index} className=" ">
                       <div className="row">
                         <div className="form-group col-md-4 mb-0">
                           <label htmlFor={`dishes.${index}.dish_name`}>
@@ -238,7 +252,7 @@ function AddMenu({ setSection }) {
                           </label>
                         </div>
                       </div>
-                      <div className="row m-2">
+                      <div className="row">
                         <div className="form-group col-md-4 mb-0">
                           <label htmlFor={`dishes.${index}.description`}>
                             Description
@@ -251,10 +265,11 @@ function AddMenu({ setSection }) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                           />
-                          
                         </div>
                         <div className="form-group col-md-8 mb-0">
-                          <label htmlFor={`dishes.${index}.showAdvancedOptions`}>
+                          <label className="mb-0"
+                            htmlFor={`dishes.${index}.showAdvancedOptions`}
+                          >
                             <input
                               type="checkbox"
                               onChange={() => handleCheckboxChange(index)}
@@ -263,9 +278,9 @@ function AddMenu({ setSection }) {
                             Advanced Options
                           </label>
                           {showAdvancedOptions[index] && (
-                            <div className="row mt-2">
+                            <div className="row ">
                               <div className="form-group col-md-6">
-                                <label htmlFor={`dishes.${index}.quantity`}>
+                                <label  htmlFor={`dishes.${index}.quantity`}>
                                   Quantity
                                 </label>
                                 <input
