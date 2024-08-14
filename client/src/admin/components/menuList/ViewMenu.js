@@ -54,7 +54,7 @@ function ViewMenu({ setSection }) {
     <>
       <section className="content" id="viewMenu">
         <div className="container-fluid">
-          <div className="row">
+          <div className="row" style={{border:"none"}}>
             <div className="col-12">
               <div className="card">
                 <div className="card-header">
@@ -91,7 +91,7 @@ function ViewMenu({ setSection }) {
                       <b> Action </b>
                     </div>
                   </div>
-                  <hr />
+
                   {data.dishes.map((dish) => (
                     <div key={dish._id} className="row">
                       <div className="col-md-6">{dish.dish_name}</div>

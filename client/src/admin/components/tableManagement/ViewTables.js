@@ -60,22 +60,25 @@ function ViewTables({ setSection }) {
                     <h3 className="m-4">Area Type : {table.area}</h3>
                     <ul className="row my-5" style={{ listStyle: "none" }}>
                       {table.tables.map((table) => (
-                        <li className="col-md-4 my-3" key={table._id}>
-                          <div className="container d-flex">
+                        <li className="col-md-2 my-3" key={table._id}>
+                          <div className="container d-flex align-items-center">
                             <div
                               className={`dashboard-table d-flex flex-column justify-content-center align-items-center`}
                             >
                               <div align="center">{table.table_no}</div>
                             </div>
                             <div>
-                              <h4 className="mx-3">
+                              <h5 className="mx-3">
                                 Max Person : {table.max_person}
-                              </h4>
+                              </h5>
                               <button
-                                className="btn btn-danger mx-3"
+                                className="btn btn-transparent bg-transparent  mx-3"
                                 onClick={() => deleteModal(table._id)}
                               >
-                                Delete
+                                <img
+                                  src="../../dist/img/delete-b.svg"
+                                  alt="delete"
+                                />
                               </button>
                             </div>
                           </div>

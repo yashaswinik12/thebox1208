@@ -55,7 +55,7 @@ export default function BookingDetails() {
                   </div>
                   <div className="row" style={{ marginTop: 20 }}>
                     <div className="col-12 table-responsive">
-                      <table className="table">
+                      <table className="table table-bordered table-striped">
                         <thead>
                           <tr align="center">
                             <th colSpan={6} style={{ fontSize: 18 }}>

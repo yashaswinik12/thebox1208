@@ -71,7 +71,7 @@ export default function AdminDashboard() {
                         </div>
                       </li>
                     </ul>
-                    <div>{userData._id}</div>
+                    {/* <div>{userData._id}</div> */}
                   </div>
                 </div>
               </div>

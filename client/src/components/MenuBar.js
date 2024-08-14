@@ -86,37 +86,37 @@ export default function MenuBar() {
                 </li> */}
                 <li className="nav-item">
                   <NavLink to={"/inventory"} className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie"></i>
+                    <i className="nav-icon fas fa-tag"></i>
                     <p style={{ fontSize: "15px" }}>Inventory</p>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to={"/menu-list"} className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie"></i>
+                    <i className="nav-icon fa-solid fa-bars"></i>
                     <p style={{ fontSize: "15px" }}>Menu List</p>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to={"/orders"} className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie"></i>
+                    <i className="nav-icon fas fa-shopping-cart"></i>
                     <p style={{ fontSize: "15px" }}>Orders</p>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to={"/table-booking"} className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie"></i>
+                    <i className="nav-icon fas fa-calendar"></i>
                     <p style={{ fontSize: "15px" }}>Table Booking</p>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to={"/table-management"} className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie"></i>
+                    <i className="nav-icon fas fa-table"></i>
                     <p style={{ fontSize: "15px" }}>Table Management</p>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to={"/staff"} className="nav-link">
-                    <i className="nav-icon fas fa-chart-pie"></i>
+                    <i className="nav-icon fas fa-user-tie"></i>
                     <p style={{ fontSize: "15px" }}>Staff Management</p>
                   </NavLink>
                 </li>
