@@ -20,7 +20,7 @@ function StaffProfileModal({ show, handleClose, handleDelete }) {
             Pranay
           </p>
         </div>
-        <div className="text-center">
+        <div className="">
           <Table responsive>
             <tbody>
               <tr>

@@ -69,7 +69,7 @@ export default function ManagerDashboard() {
   };
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ overflow: "hidden" }}>
       <Navbar />
 
       <MenuBar />
@@ -102,7 +102,7 @@ export default function ManagerDashboard() {
                         </div>
                       </li>
                     </ul>
-                    <div>{userData._id}</div>
+                    {/* <div>{userData._id}</div> */}
                   </div>
                 </div>
               </div>

@@ -74,7 +74,7 @@ function ViewMenu({ setSection }) {
             </div>
           </div>
         </div>
-        <div className="row container-fluid">
+        <div className="row container-fluid" id="menuData">
           {menuData.map((data) => (
             <div key={data._id} className="col-md-4">
               <div className="card m-2">
@@ -91,7 +91,7 @@ function ViewMenu({ setSection }) {
                       <b> Action </b>
                     </div>
                   </div>
-                  <hr />
+                  {/* <hr /> */}
                   {data.dishes.map((dish) => (
                     <div key={dish._id} className="row">
                       <div className="col-md-6">{dish.dish_name}</div>

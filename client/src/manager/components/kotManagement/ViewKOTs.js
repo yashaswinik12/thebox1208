@@ -49,13 +49,13 @@ function ViewKOTs() {
           {kotData.map((data) => (
             <div key={data._id} className="col-md-4">
               <div className="card m-2">
-                <h4 className="card-header"> {data.customer_name} </h4>
+                <h4 className="card-header" style={{borderBottom:"none"}}> {data.customer_name} </h4>
                 <div className="card-body">
                   <div className="d-flex justify-content-around m-2">
                     <h5>Area: {data.table_area}</h5>
                     <h5>Table No.: {data.table_no}</h5>
                   </div>
-                  <hr />
+                  {/* <hr /> */}
                   <div className="row">
                     <div className="col-md-6">
                       <b> Dish Name </b>
@@ -67,23 +67,23 @@ function ViewKOTs() {
                       <b> Action </b>
                     </div>
                   </div>
-                  <hr />
+                  {/* <hr /> */}
                   {data.order_items.map((dish) => (
-                    <div key={dish._id} className="row m-2">
+                    <div key={dish._id} className="row">
                       <div className="col-md-6">{dish.dish_name}</div>
                       <div className="col-md-2">{dish.quantity}</div>
                       <div className="col-md-4">
                         <button
                           type="button"
-                          className="btn"
+                          className="btn bg-transparent"
                           title="Order Completed"
                         >
-                          Complete
+                         <img src="../dist/img/Completed-b.svg"/>  
                         </button>
                       </div>
                     </div>
                   ))}
-                  <hr />
+                  {/* <hr /> */}
                   <div className="m-2">
                     <span className="font-weight-bold">Comment : </span>
                     <span>{data.comment}</span>
